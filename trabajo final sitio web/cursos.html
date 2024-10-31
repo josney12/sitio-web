@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos de Programación</title>
+  
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(https://tse1.mm.bing.net/th?id=OIP.Db46xsV05n2S6aZleCCBsgHaD8&pid=Api&P=0&h=180);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background-image: url(https://assets.bedu.org/images/top-lenguajes-programacion-2021.jpg);
+            background-size: cover;
+            color: white;
+            padding: 10px;
+        }
+
+        .logo img {
+            height: 150px;
+            max-width: 100%;
+        }
+
+        .nav {
+            background-color: transparent;
+        }
+
+        .nav-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .nav-link {
+            display: block;
+            color: white !important;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav-link:hover {
+            background-color: #611515;
+        }
+
+        .main-content {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .course-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 1em;
+            width: calc(33.333% - 2em);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .course-card:hover {
+            transform: scale(1.05);
+        }
+
+        .course-card img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .course-info {
+            padding: 1em;
+        }
+
+        .course-info h2 {
+            color: #333;
+            font-size: 1.5em;
+            margin: 0.5em 0;
+        }
+
+        .course-info p {
+            color: #666;
+            margin: 0.5em 0;
+        }
+
+        .course-info p strong {
+            color: #333;
+        }
+
+        .footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 10px;
+        }
+
+        .footer-content {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: black;
+            margin: 0 auto;
+            max-width: 1000px;
+            border-radius: 5px;
+        }
+
+        /* Estilos para los botones de pagar */
+        .course-card button {
+            background-color: #28a745;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .course-card button:hover {
+            background-color: #218838;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-list {
+                flex-direction: column;
+            }
+
+            .nav-item {
+                flex: none;
+            }
+
+            .nav-link {
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+
+            .titulo-principal {
+                font-size: 1.5em;
+            }
+
+            .course-card {
+                width: calc(50% - 2em);
+            }
+
+            .course-info h2 {
+                font-size: 1.2em;
+            }
+
+            .course-info p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-link {
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+
+            .titulo-principal {
+                font-size: 1.2em;
+            }
+
+            .course-card {
+                width: calc(100% - 2em);
+            }
+
+            .course-info h2 {
+                font-size: 1em;
+            }
+
+            .course-info p {
+                font-size: 12px;
+            }
+
+            .footer {
+                font-size: 12px;
+            }
+        }
+    </style>
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="./logo empresa4.png" alt="Logo Empresa">
+        </div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="somos.html" class="nav-link">Somos</a></li>
+                <li class="nav-item"><a href="mision_vision.html" class="nav-link">Misión/Visión</a></li>
+                <li class="nav-item"><a href="cursos.html" class="nav-link">Cursos</a></li>
+                <li class="nav-item"><a href="pqrs.html" class="nav-link">PQRS</a></li>
+                <li class="nav-item"><a href="formulario.html" class="nav-link">Trabaje con nosotros</a></li>
+                <li class="nav-item"><a href="empresa-inicio.html" class="nav-link">Inicia sesion</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+        <div class="course-card">
+            <img src="./imagenes/html css.jpg" alt="Curso 1">
+            <div class="course-info">
+                <h2>Curso de HTML y CSS</h2>
+                <p>Aprende a construir sitios web básicos con HTML y CSS.</p>
+                <p><strong>Duración:</strong> 4 semanas</p>
+                <p><strong>Precio:</strong> $50</p>
+                <button onclick="selectCourse('Curso de HTML y CSS')">Pagar</button>
+            </div>
+        </div>
+        <div class="course-card">
+            <img src="./imagenes/javascript.jpg" alt="Curso 2">
+            <div class="course-info">
+                <h2>Curso de JavaScript</h2>
+                <p>Domina el lenguaje de programación web más popular.</p>
+                <p><strong>Duración:</strong> 6 semanas</p>
+                <p><strong>Precio:</strong> $70</p>
+                <button onclick="selectCourse('Curso de JavaScript')">Pagar</button>
+            </div>
+        </div>
+        <div class="course-card">
+            <img src="./imagenes/javascript.jpg" alt="Curso 3">
+            <div class="course-info">
+                <h2>Curso de Python</h2>
+                <p>Aprende Python desde cero y crea tus propias aplicaciones.</p>
+                <p><strong>Duración:</strong> 8 semanas</p>
+                <p><strong>Precio:</strong> $80</p>
+                <button onclick="selectCourse('Curso de Python')">Pagar</button>
+            </div>
+        </div>
+        <div class="course-card">
+            <img src="./imagenes/react.jpg" alt="Curso 4" width="100%">
+            <div class="course-info">
+                <h2>Curso de React</h2>
+                <p>Desarrolla aplicaciones web avanzadas con React.</p>
+                <p><strong>Duración:</strong> 10 semanas</p>
+                <p><strong>Precio:</strong> $100</p>
+                <button onclick="selectCourse('Curso de React')">Pagar</button>
+            </div>
+        </div>
+        <div class="course-card">
+            <img src="./imagenes/node.js" alt="Curso 5">
+            <div class="course-info">
+                <h2>Curso de Node.js</h2>
+                <p>Construye aplicaciones del lado del servidor con Node.js.</p>
+                <p><strong>Duración:</strong> 5 semanas</p>
+                <p><strong>Precio:</strong> $60</p>
+                <button onclick="selectCourse('Curso de Node.js')">Pagar</button>
+            </div>
+        </div>
+        <div class="course-card">
+            <img src="./imagenes/angular.jpg" alt="Curso 6">
+            <div class="course-info">
+                <h2>Curso de Angular</h2>
+                <p>Desarrolla aplicaciones web dinámicas con Angular.</p>
+                <p><strong>Duración:</strong> 7 semanas</p>
+                <p><strong>Precio:</strong> $90</p>
+                <button onclick="selectCourse('Curso de Angular')">Pagar</button>
+            </div>
+        </div>
+        <div class="course-card">
+            <img src="./imagenes/vue.js" alt="Curso 7" width="100%">
+            <div class="course-info">
+                <h2>Curso de Vue.js</h2>
+                <p>Aprende a usar Vue.js para crear interfaces de usuario.</p>
+                <p><strong>Duración:</strong> 6 semanas</p>
+                <p><strong>Precio:</strong> $70</p>
+                <button onclick="selectCourse('Curso de Vue.js')">Pagar</button>
+            </div>
+        </div>
+        <div class="course-card">
+            <img src="./imagenes/SQL.jpg" alt="Curso 8" width="100%">
+            <div class="course-info">
+                <h2>Curso de SQL</h2>
+                <p>Domina las bases de datos relacionales con SQL.</p>
+                <p><strong>Duración:</strong> 4 semanas</p>
+                <p><strong>Precio:</strong> $50</p>
+                <button onclick="selectCourse('Curso de SQL')">Pagar</button>
+            </div>
+        </div>
+        <div class="course-card">
+            <img src="./imagenes/GIT Y GITHUD.jpg" alt="Curso 9">
+            <div class="course-info">
+                <h2>Curso de Git y GitHub</h2>
+                <p>Gestiona tus proyectos con control de versiones usando Git y GitHub.</p>
+                <p><strong>Duración:</strong> 3 semanas</p>
+                <p><strong>Precio:</strong> $40</p>
+                <button onclick="selectCourse('Curso de Git y GitHub')">Pagar</button>
+            </div>
+        </div>
+        <div class="course-card">
+            <img src="./imagenes/docker.jpg" alt="Curso 10">
+            <div class="course-info">
+                <h2>Curso de Docker</h2>
+                <p>Aprende a contenerizar tus aplicaciones con Docker.</p>
+                <p><strong>Duración:</strong> 5 semanas</p>
+                <p><strong>Precio:</strong> $60</p>
+                <button onclick="selectCourse('Curso de Docker')">Pagar</button>
+            </div>
+        </div>
+    </main>
+    <script>
+        function selectCourse(courseName) {
+            localStorage.setItem('selectedCourse', courseName);
+            window.location.href = 'pago.html';
+        }
+    </script>
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">Página con fines educativos. &copy; 2024</p>
+            <p class="footer-text">Autor: josneycastillo2011@gmail.com</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('payment-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+
+            // Obtener valores del formulario
+            const nombre = document.getElementById('nombre').value;
+            const correo = document.getElementById('correo').value;
+            const curso = document.getElementById('curso').value;
+
+            // Crear objeto de pago
+            const paymentEntry = {
+                nombre: nombre,
+                correo: correo,
+                curso: curso
+            };
+
+            // Obtener datos existentes de pagos del localStorage
+            const paymentList = JSON.parse(localStorage.getItem('payments')) || [];
+            // Agregar la nueva entrada a la lista
+            paymentList.push(paymentEntry);
+            // Guardar la lista actualizada en el localStorage
+            localStorage.setItem('payments', JSON.stringify(paymentList));
+
+            // Restablecer el formulario
+            this.reset();
+            alert('Pago registrado con éxito!');
+        });
+    </script>
+
+</html>
