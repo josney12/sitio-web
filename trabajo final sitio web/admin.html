@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informes del Administrador</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: #000;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            color: #000;
+            background-color: #fff;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 2px 1px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Informes del Administrador</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Usuarios Registrados</h2>
+            <table id="user-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Contraseña</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los usuarios se llenarán aquí mediante JavaScript -->
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h2>Pagos de Cursos</h2>
+            <table id="payment-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Curso</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los pagos se llenarán aquí mediante JavaScript -->
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h2>PQRS</h2>
+            <table id="pqrs-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>DNI</th>
+                        <th>Tipo</th>
+                        <th>Mensaje</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Las PQRS se llenarán aquí mediante JavaScript -->
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h2>Trabaja con Nosotros</h2>
+            <table id="worker-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>DNI</th>
+                        <th>Nº de Cuenta</th>
+                        <th>Teléfono</th>
+                        <th>Dirección</th>
+                        <th>Destinatario</th>
+                        <th>Pedido</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los trabajadores se llenarán aquí mediante JavaScript -->
+                </tbody>
+            </table>
+            <h3>Añadir Nuevo Curso</h3>
+            <form id="add-course-form">
+                <label for="name">Nombre:</label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="description">Descripción:</label><br>
+                <input type="text" id="description" name="description"><br>
+                <label for="duration">Duración:</label><br>
+                <input type="text" id="duration" name="duration"><br>
+                <label for="price">Precio:</label><br>
+                <input type="text" id="price" name="price"><br><br>
+                <button type="submit">Añadir Curso</button>
+            </form>
+        </section>
+    </main>
+    <script>
+        // Cargar datos en la página del administrador
+        window.onload = function() {
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const userTableBody = document.getElementById('user-table').getElementsByTagName('tbody')[0];
+            const payments = JSON.parse(localStorage.getItem('payments')) || [];
+            const paymentTableBody = document.getElementById('payment-table').getElementsByTagName('tbody')[0];
+            const pqrs = JSON.parse(localStorage.getItem('pqrs')) || [];
+            const pqrsTableBody = document.getElementById('pqrs-table').getElementsByTagName('tbody')[0];
+            const workers = JSON.parse(localStorage.getItem('workers')) || [];
+            const workerTableBody = document.getElementById('worker-table').getElementsByTagName('tbody')[0];
+
+            // Llenar la tabla de usuarios
+            users.forEach((user, index) => {
+                const row = userTableBody.insertRow();
+                row.insertCell(0).textContent = user.name;
+                row.insertCell(1).textContent = user.email;
+                row.insertCell(2).textContent = user.password;
+                const actionCell = row.insertCell(3);
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Eliminar';
+                deleteButton.onclick = () => deleteUser(index);
+                actionCell.appendChild(deleteButton);
+            });
+
+            // Llenar la tabla de pagos
+            payments.forEach((payment, index) => {
+                const row = paymentTableBody.insertRow();
+                row.insertCell(0).textContent = payment.nombre;
+                row.insertCell(1).textContent = payment.correo;
+                row.insertCell(2).textContent = payment.curso;
+                const actionCell = row.insertCell(3);
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Eliminar';
+                deleteButton.onclick = () => deletePayment(index);
+                actionCell.appendChild(deleteButton);
+            });
+
+            // Llenar la tabla de PQRS
+            pqrs.forEach((entry, index) => {
+                const row = pqrsTableBody.insertRow();
+                row.insertCell(0).textContent = entry.nombre;
+                row.insertCell(1).textContent = entry.dni;
+                row.insertCell(2).textContent = entry.tipo;
+                row.insertCell(3).textContent = entry.mensaje;
+                const actionCell = row.insertCell(4);
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Eliminar';
+                deleteButton.onclick = () => deletePQRS(index);
+                actionCell.appendChild(deleteButton);
+            });
+
+            // Llenar la tabla de trabajadores
+            workers.forEach((worker, index) => {
+                const row = workerTableBody.insertRow();
+                row.insertCell(0).textContent = worker.nombre;
+                row.insertCell(1).textContent = worker.dni;
+                row.insertCell(2).textContent = worker.cuenta;
+                row.insertCell(3).textContent = worker.telefono;
+                row.insertCell(4).textContent = worker.direccion;
+                row.insertCell(5).textContent = worker.destinatario;
+                row.insertCell(6).textContent = worker.pedido;
+                const actionCell = row.insertCell(7);
+                const deleteButton = document.createElement('button');
+                deleteButton.textContent = 'Eliminar';
+                deleteButton.onclick = () => deleteWorker(index);
+                actionCell.appendChild(deleteButton);
+            });
+        };
+
+        function deleteUser(index) {
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            console.log(`Eliminar usuario en el índice: ${index}`); // Agregado para depuración
+            if (confirm('¿Estás seguro de que quieres eliminar a este usuario?')) {
+                users.splice(index, 1);
+                localStorage.setItem('users', JSON.stringify(users));
+                window.location.reload(); // Recargar la página para actualizar la tabla
+            }
+        }
+
+        function deletePayment(index) {
+            const payments = JSON.parse(localStorage.getItem('payments')) || [];
+            console.log(`Eliminar pago en el índice: ${index}`); // Agregado para depuración
+            if (confirm('¿Estás seguro de que quieres eliminar este pago?')) {
+                payments.splice(index, 1);
+                localStorage.setItem('payments', JSON.stringify(payments));
+                window.location.reload(); // Recargar la página para actualizar la tabla
+            }
+        }
+
+        function deletePQRS(index) {
+            const pqrs = JSON.parse(localStorage.getItem('pqrs')) || [];
+            console.log(`Eliminar PQRS en el índice: ${index}`); // Agregado para depuración
+            if (confirm('¿Estás seguro de que quieres eliminar esta entrada de PQRS?')) {
+                pqrs.splice(index, 1);
+                localStorage.setItem('pqrs', JSON.stringify(pqrs));
+                window.location.reload(); // Recargar la página para actualizar la tabla
+            }
+        }
+
+        function deleteWorker(index) {
+            const workers = JSON.parse(localStorage.getItem('workers')) || [];
+            console.log(`Eliminar trabajador en el índice: ${index}`); // Agregado para depuración
+            if (confirm('¿Estás seguro de que quieres eliminar esta entrada?')) {
+                workers.splice(index, 1);
+                localStorage.setItem('workers', JSON.stringify(workers));
+                window.location.reload(); // Recargar la página para actualizar la tabla
+            }
+        }
+    </script>
+</body>
+</html>
+

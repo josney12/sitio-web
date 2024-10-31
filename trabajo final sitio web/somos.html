@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somos - Empresa de Clases de Programación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(https://tse1.mm.bing.net/th?id=OIP.Db46xsV05n2S6aZleCCBsgHaD8&pid=Api&P=0&h=180);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: #333; 
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: url(https://assets.bedu.org/images/top-lenguajes-programacion-2021.jpg);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .logo img {
+            height: 80px;
+            margin-bottom: 20px;
+        }
+
+        .titulo-principal {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .nav {
+            background-color: black;
+        }
+
+        .nav-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Permite que los elementos se ajusten en varias líneas si es necesario */
+        }
+
+        .nav-item {
+            text-align: center;
+        }
+
+        .nav-link {
+            display: block;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav-link:hover {
+            background-color: #333;
+        }
+
+        .main-content {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .section-description, .values-list {
+            color: #666;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .values-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .value-item {
+            margin: 0.5em 0;
+            font-size: 1.2em;
+        }
+
+        .footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                padding: 20px 10px;
+            }
+
+            .titulo-principal {
+                font-size: 2em;
+            }
+
+            .nav-link {
+                font-size: 14px;
+            }
+
+            .main-content {
+                padding: 20px 10px;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+            }
+
+            .value-item {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-link {
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+
+            .titulo-principal {
+                font-size: 1.5em;
+            }
+
+            .section-title {
+                font-size: 1.2em;
+            }
+
+            .section-description, .values-list {
+                font-size: 14px;
+            }
+
+            .footer {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="./logo empresa4.png" alt="Logo Empresa">
+        </div>
+        <h1 class="titulo-principal">Sobre Nosotros</h1>
+    </header>
+    <nav class="nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+            <li class="nav-item"><a href="somos.html" class="nav-link">Somos</a></li>
+            <li class="nav-item"><a href="mision_vision.html" class="nav-link">Misión/Visión</a></li>
+            <li class="nav-item"><a href="cursos.html" class="nav-link">Cursos</a></li>
+            <li class="nav-item"><a href="pqrs.html" class="nav-link">PQRS</a></li>
+            <li class="nav-item"><a href="formulario.html" class="nav-link">Trabaje con nosotros</a></li>
+            <li class="nav-item"><a href="empresa-inicio.html" class="nav-link">Inicia sesion</a></li>
+        </ul>
+    </nav>
+    <main class="main-content">
+        <section class="section">
+            <h2 class="section-title">Quiénes Somos</h2>
+            <p class="section-description">Somos una empresa comprometida con la educación en tecnología. Nos especializamos en impartir clases de programación para todas las edades y niveles. Nuestro equipo está compuesto por profesionales altamente calificados con años de experiencia en la industria.</p>
+        </section>
+        <section class="section">
+            <h2 class="section-title">Nuestros Valores</h2>
+            <ul class="values-list">
+                <li class="value-item">Excelencia en la enseñanza</li>
+                <li class="value-item">Innovación constante</li>
+                <li class="value-item">Compromiso con los estudiantes</li>
+                <li class="value-item">Inclusión y diversidad</li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">Página con fines educativos. &copy; 2024</p>
+            <p class="footer-text">Autor: josneycastillo2011@gmail.com</p>
+        </div>
+    </footer>
+</body>
+</html>

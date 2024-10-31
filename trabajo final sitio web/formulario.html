@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario - CODE JOS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(https://tse1.mm.bing.net/th?id=OIP.Db46xsV05n2S6aZleCCBsgHaD8&pid=Api&P=0&h=180);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: #333; 
+        }
+
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background-image: url(https://assets.bedu.org/images/top-lenguajes-programacion-2021.jpg);
+            background-size: cover;
+            color: white;
+            padding: 10px;
+        }
+
+        .logo img {
+            height: 150px;
+            max-width: 100%;
+        }
+
+        .nav {
+            background-color: transparent;
+        }
+
+        .nav-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .nav-link {
+            display: block;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav-link:hover {
+            background-color: #611515;
+        }
+
+        .main-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contenedor {
+            text-align: center;
+            font-size: 2em;
+            margin: 20px 0;
+        }
+
+        .form-container {
+            background-color: #ffe6e6;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        .form-container label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #d63384;
+        }
+
+        .form-container input[type="text"],
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-container .form-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-container input[type="submit"],
+        .form-container input[type="reset"] {
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #d63384;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .form-container input[type="submit"]:hover,
+        .form-container input[type="reset"]:hover {
+            background-color: #b0246a;
+        }
+
+        .footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 10px;
+        }
+
+        .footer-content {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: black;
+            margin: 0 auto;
+            max-width: 1000px;
+            border-radius: 5px;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-list {
+                flex-direction: column;
+            }
+
+            .nav-item {
+                flex: none;
+            }
+
+            .nav-link {
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+
+            .contenedor {
+                font-size: 1.5em;
+            }
+
+            .form-container {
+                width: 95%;
+            }
+
+            .form-container input[type="text"],
+            .form-container textarea {
+                font-size: 14px;
+            }
+
+            .form-container .form-buttons {
+                flex-direction: column;
+            }
+
+            .form-container input[type="submit"],
+            .form-container input[type="reset"] {
+                font-size: 14px;
+                padding: 8px 16px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-link {
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+
+            .contenedor {
+                font-size: 1.2em;
+            }
+
+            .form-container input[type="text"],
+            .form-container textarea {
+                font-size: 12px;
+            }
+
+            .form-container .form-buttons {
+                flex-direction: column;
+            }
+
+            .form-container input[type="submit"],
+            .form-container input[type="reset"] {
+                font-size: 12px;
+                padding: 6px 12px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .footer {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="./logo empresa4.png" alt="Logo Empresa">
+        </div>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="somos.html" class="nav-link">Somos</a></li>
+                <li class="nav-item"><a href="mision_vision.html" class="nav-link">Misión/Visión</a></li>
+                <li class="nav-item"><a href="cursos.html" class="nav-link">Cursos</a></li>
+                <li class="nav-item"><a href="pqrs.html" class="nav-link">PQRS</a></li>
+                <li class="nav-item"><a href="formulario.html" class="nav-link">Trabaje con nosotros</a></li>
+                <li class="nav-item"><a href="empresa-inicio.html" class="nav-link">Inicia sesion</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+       
+            <h1>Formulario</h1>
+        
+        <div class="form-container">
+            <form id="trabaja-form" action="https://formsubmit.co/josneycastillo2011@gmail.com" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni" name="dni" required>
+
+                <label for="cuenta">Nº de cuenta:</label>
+                <input type="text" id="cuenta" name="cuenta" required>
+
+                <label for="telefono">Nº de teléfono:</label>
+                <input type="text" id="telefono" name="telefono">
+
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion">
+
+                <label for="destinatario">Destinatario:</label>
+                <textarea id="destinatario" name="destinatario" rows="2"></textarea>
+
+                <label for="pedido">Pedido:</label>
+                <textarea id="pedido" name="pedido" rows="4"></textarea>
+
+                <div class="form-buttons">
+                    <input type="reset" value="Restablecer">
+                    <input type="submit" value="Enviar">
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">Página con fines educativos. &copy; 2024</p>
+            <p class="footer-text">Autor: josneycastillo2011@gmail.com</p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('trabaja-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById('nombre').value;
+            const dni = document.getElementById('dni').value;
+            const cuenta = document.getElementById('cuenta').value;
+            const telefono = document.getElementById('telefono').value;
+            const direccion = document.getElementById('direccion').value;
+            const destinatario = document.getElementById('destinatario').value;
+            const pedido = document.getElementById('pedido').value;
+
+            const worker = { nombre, dni, cuenta, telefono, direccion, destinatario, pedido };
+
+            let workers = JSON.parse(localStorage.getItem('workers')) || [];
+            workers.push(worker);
+            localStorage.setItem('workers', JSON.stringify(workers));
+
+            alert('¡Formulario enviado correctamente!');
+        });
+    </script>
+</body>
+
+</html>
